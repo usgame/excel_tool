@@ -31,8 +31,18 @@ namespace USGame
             {
                 pathOut = args[1];
             }
-            ExcelParser.Instance.Parse(pathIn, pathOut);
-            Pause();
+
+            try
+            {
+                ExcelParser.Instance.Parse(pathIn, pathOut);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Pause();
+            }
         }
 
         /// <summary>
